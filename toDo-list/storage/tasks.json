@@ -1,60 +1,14 @@
 [
     {
-        "title": "gv",
+        "title": "PHP",
         "priority": "Urgent",
-        "description": "v",
-        "categories": [
-            "Financial"
-        ],
-        "steps": [
-            "f"
-        ]
-    },
-    {
-        "title": "gv",
-        "priority": "Urgent",
-        "description": "vv",
-        "categories": [
-            "Financial"
-        ],
-        "steps": [
-            "ff"
-        ]
-    },
-    {
-        "title": "gv",
-        "priority": "Urgent",
-        "description": "vv",
-        "categories": [
-            "Financial"
-        ],
-        "steps": [
-            "ffd"
-        ]
-    },
-    {
-        "title": "d",
-        "priority": "Urgent",
-        "description": "d",
+        "description": "Lab 4",
         "categories": [
             "Education"
         ],
         "steps": [
-            "d"
-        ]
-    },
-    {
-        "title": "d",
-        "priority": "Urgent",
-        "description": "d",
-        "categories": [
-            "Education",
-            "Professional",
-            "Financial",
-            "Personal"
-        ],
-        "steps": [
-            "d"
+            "Do the readme file for raport",
+            "Repeat theory"
         ]
     }
 ]
