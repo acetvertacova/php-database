@@ -36,20 +36,20 @@ This is a simple PHP-based task management application. It allows users to creat
 
 ## 📃 Project Documentation
 
-toDo-list/
-├── public/
-│   ├── index.php             # Displays the latest two tasks
-│   ├── task/
-│   │   ├── create.php        # Form for creating a new task
-│   │   └── index.php?id=X     # View a specific task by ID
-│
-├── src/
-│   ├── handlers/
-│   │   └── handler.php       # Handles task creation and validation
-│   └── helpers.php           # Validation and error display helpers
-│
-├── storage/
-│   └── tasks.json            # JSON file storing all tasks
+ toDo-list/
+ ├── public/
+ │   ├── index.php             # Displays the latest two tasks
+ │   ├── task/
+ │   │   ├── create.php        # Form for creating a new task
+ │   │   └── index.php?id=X     # View a specific task by ID
+ │
+ ├── src/
+ │   ├── handlers/
+ │   │   └── handler.php       # Handles task creation and validation
+ │   └── helpers.php           # Validation and error display helpers
+ │
+ ├── storage/
+ │   └── tasks.json            # JSON file storing all tasks
 
 
 ## Usage Examples
