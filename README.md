@@ -35,7 +35,7 @@ This is a simple PHP-based task management application. It allows users to creat
     - JavaScript for dynamic steps in task creation
 
 ## 📃 Project Documentation
-
+```
  toDo-list/
  ├── public/
  │   ├── index.php             # Displays the latest two tasks
@@ -50,7 +50,7 @@ This is a simple PHP-based task management application. It allows users to creat
  │
  ├── storage/
  │   └── tasks.json            # JSON file storing all tasks
-
+```
 
 ## Usage Examples
 
