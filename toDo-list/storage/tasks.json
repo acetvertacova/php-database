@@ -10,5 +10,18 @@
             "Do the readme file for raport",
             "Repeat theory"
         ]
+    },
+    {
+        "title": "cdscd",
+        "priority": "High",
+        "description": "cddxvfg",
+        "categories": [
+            "Education",
+            "Professional"
+        ],
+        "steps": [
+            "d",
+            "cds"
+        ]
     }
 ]
