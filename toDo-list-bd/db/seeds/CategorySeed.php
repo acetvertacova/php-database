@@ -9,10 +9,10 @@ class CategorySeed extends AbstractSeed
     public function run(): void
     {
         $data = [
-            ['name' => 'Education'],
-            ['name' => 'Professional'],
-            ['name' => 'Financial'],
-            ['name' => 'Personal']
+            ['name' => 'Education', 'created_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Professional', 'created_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Financial', 'created_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Personal', 'created_at' => date('Y-m-d H:i:s')]
         ];
         $this->table('category')
             ->insert($data)

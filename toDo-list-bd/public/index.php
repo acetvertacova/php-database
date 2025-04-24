@@ -1,5 +1,6 @@
 <?php
-require_once('../src/helpers.php');
+require_once __DIR__ . '/../src/helpers.php';
+
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $layout = __DIR__ . '/../templates/layout.php';
@@ -14,6 +15,9 @@ switch ($url) {
         break;
     case '/create':
         template('create.php');
+        break;
+    case '/delete':
+        require_once __DIR__ . '/../src/handlers/task/delete.php';
         break;
     default:
         template('errors/404.php');

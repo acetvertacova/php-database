@@ -9,7 +9,7 @@ class TaskSeed extends AbstractSeed
     public function run(): void
     {
         $data = [
-            ['title' => 'PHP', 'description' => 'Lab 5', 'priority_id' => 1],
+            ['title' => 'PHP', 'description' => 'Lab 5', 'priority' => 'High', 'steps' => 'migration', 'category_id' => 1, 'created_at' => date('Y-m-d H:i:s')],
         ];
 
         $this->table('task')

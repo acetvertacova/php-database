@@ -5,72 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>LL_04</title>
+    <title>Create new task</title>
 </head>
 
-<body>
-    <form method="post" action="/public/task/create.php" enctype="multipart/form-data">
-        <div>
-            <label for="title">Task's title</label>
-            <input type="text" id="title" name="title" />
-        </div>
+<?php
+require_once '../src/handlers/task/create.php';
+?>
 
-        <div>
-            <label for="priority">Priority</label>
-            <select id="priority" name="priority">
-                <option value="Urgent">Urgent</option>
-                <option value="High">Hight</option>
-                <option value="Low">Low</option>
-            </select>
-        </div>
+<body class="bg-sky-100 py-8">
 
-        <div>
-            <label for="description">Description</label>
-            <textarea id="description" name="description"></textarea>
-        </div>
+    <div class="container mx-auto px-4">
 
-        <div>
-            <label for="categories">Categories</label>
-            <select id="categories" name="categories[]" multiple>
-                <option value="Education">Education</option>
-                <option value="Professional">Professional</option>
-                <option value="Financial">Financial</option>
-                <option value="Personal">Personal</option>
-            </select>
-        </div>
+        <h2 class="text-3xl font-semibold text-gray-800 mb-8">Create New Task</h2>
 
-        <div>
-            <ol id="stepsList" type="1">Steps:
-            </ol>
-            <button type="button" id="addStepButton">Add step</button>
-            <button type="button" id="removeStepButton">Remove step</button>
-        </div>
-        <script>
-            document.getElementById('addStepButton').addEventListener('click', function() {
-                const stepsList = document.getElementById('stepsList');
-                const steps = stepsList.getElementsByTagName('li');
+        <form method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-lg">
 
-                if (steps.length === 0 || steps[steps.length - 1].querySelector('input').value.trim() !== '') {
-                    let newStep = document.createElement('li');
-                    let newInput = document.createElement('input');
+            <div class="mb-4">
+                <label for="title" class="block text-lg font-semibold text-gray-700">Task's Title</label>
+                <input type="text" id="title" name="title" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" />
+                <?php printErrors($errors, 'title'); ?>
+            </div>
 
-                    newInput.setAttribute('name', 'steps[]');
-                    newStep.appendChild(newInput);
+            <div class="mb-4">
+                <label for="priority" class="block text-lg font-semibold text-gray-700">Priority</label>
+                <input type="text" id="priority" name="priority" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" />
+                <?php printErrors($errors, 'priority'); ?>
+            </div>
 
-                    document.getElementById('stepsList').appendChild(newStep);
-                } else {
-                    alert('Please fill in the previous step before adding a new one.');
-                }
-            });
+            <div class="mb-4">
+                <label for="description" class="block text-lg font-semibold text-gray-700">Description</label>
+                <textarea id="description" name="description" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                <?php printErrors($errors, 'description'); ?>
+            </div>
 
-            document.getElementById('removeStepButton').addEventListener('click', function() {
-                let stepsList = document.getElementById('stepsList');
-                stepsList.removeChild(stepsList.lastElementChild);
-            });
-        </script>
+            <div class="mb-4">
+                <label for="category" class="block text-lg font-semibold text-gray-700">Category</label>
+                <textarea id="category" name="category" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                <?php printErrors($errors, 'category'); ?>
+            </div>
 
-        <button type="submit">Add task</button>
-    </form>
+            <div class="mb-4">
+                <label for="steps" class="block text-lg font-semibold text-gray-700">Steps</label>
+                <textarea id="steps" name="steps" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                <?php printErrors($errors, 'steps'); ?>
+            </div>
+
+            <div class="mb-4">
+                <button type="submit" class="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition">Add Task</button>
+            </div>
+        </form>
+    </div>
 
 </body>
 

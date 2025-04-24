@@ -10,6 +10,7 @@ final class CategoryCreateMigration extends AbstractMigration
     {
         $this->table('category')
             ->addColumn('name', 'string')
+            ->addColumn('created_at', 'datetime')
             ->create();
     }
 }
