@@ -81,7 +81,7 @@ I’ve created two main tables using migrations:
 | name        | string    | Name of the category                 |
 | created_at  | datetime  | Timestamp of creation                |
 
-<img src="/toDo-list-bd/usage/task-table.png">
+<img src="/toDo-list-bd/usage/category-table.png">
 
 1.2 `Task Table` stores tasks linked to categories.
 
@@ -95,7 +95,7 @@ I’ve created two main tables using migrations:
 | category_id | integer   | Foreign key to category(id)                          |
 | created_at  | datetime  | Timestamp of creation                                |
 
-<img src="/toDo-list-bd/usage/category-table.png">
+<img src="/toDo-list-bd/usage/task-table.png">
 
 > [!IMPORTANT]
 > A foreign key constraint is set so that if a category is deleted, the task’s category_id is set to NULL.
