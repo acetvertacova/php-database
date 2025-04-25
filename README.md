@@ -524,7 +524,7 @@ After each input field, if any validation errors exist, the `printErrors()` func
    
 
  | **Advantage**         | **Database**                                                       | **File Storage**                   |
- |-----------------------|---------------------------------------------------------------------------------------------------------|
+ |-----------------------|--------------------------------------------------------------------|------------------------------------|
  | **Data Consistency**  | Ensures integrity with transactions, unique keys, and constraints  | Integrity must be maintained       |
  | **Access Control**    | Controls access with users and roles, ensuring security            | Limited by the operating system    |
  | **Concurrent Access** | Supports with locking mechanisms to avoid data conflicts           | Does not support                   |
