@@ -21,9 +21,9 @@ return
             'development' => [
                 'adapter' => 'pgsql',
                 'host' => 'localhost',
-                'name' => 'postgres',
-                'user' => 'user',
-                'pass' => 'root',
+                'name' => 'your_db_name',
+                'user' => 'your_user',
+                'pass' => 'your_password',
                 'port' => '5432',
                 'charset' => 'utf8',
             ],
