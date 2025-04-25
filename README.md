@@ -521,6 +521,7 @@ After each input field, if any validation errors exist, the `printErrors()` func
 - improves code readability and maintainability.
 
 3. What are the advantages of storing data in a database compared to storing in files?
+   
 
  | **Advantage**         | **Database**                                                       | **File Storage**                   |
  |-----------------------|---------------------------------------------------------------------------------------------------------|
@@ -530,6 +531,7 @@ After each input field, if any validation errors exist, the `printErrors()` func
  | **Scalability**       | Easily scales to handle larger datasets and offers flexibility     | Difficult to manage large datasets |
  | **Data Recovery**     | Built-in recovery mechanisms to restore data in case of failure    | Often not possible without backups |
  | **Transaction**       | Supports transactions ensuring atomicity (all or nothing)          | No built-in transaction support    |
+ 
 
 4. What is an SQL injection?
 
