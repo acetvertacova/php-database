@@ -522,14 +522,14 @@ After each input field, if any validation errors exist, the `printErrors()` func
 
 3. What are the advantages of storing data in a database compared to storing in files?
 
- | **Advantage**       | **Database**                                                    | **File Storage**                 |
- |---------------------|----------------------------------------------------------------------------------------------------|
- |**Data Consistency** |Ensures integrity with transactions, unique keys, and constraints|Integrity must be maintained      |
- |**Access Control**   |Controls access with users and roles, ensuring security          |Limited by the operating system   |
- |**Concurrent Access**|Supports with locking mechanisms to avoid data conflicts         |Does not support                  |
- |**Scalability**      |Easily scales to handle larger datasets and offers flexibility   |Difficult to manage large datasets|
- |**Data Recovery**    |Built-in recovery mechanisms to restore data in case of failure  |Often not possible without backups|
- |**Transaction**      |Supports transactions ensuring atomicity (all or nothing)        |No built-in transaction support   |
+ | **Advantage**         | **Database**                                                       | **File Storage**                   |
+ |-----------------------|---------------------------------------------------------------------------------------------------------|
+ | **Data Consistency**  | Ensures integrity with transactions, unique keys, and constraints  | Integrity must be maintained       |
+ | **Access Control**    | Controls access with users and roles, ensuring security            | Limited by the operating system    |
+ | **Concurrent Access** | Supports with locking mechanisms to avoid data conflicts           | Does not support                   |
+ | **Scalability**       | Easily scales to handle larger datasets and offers flexibility     | Difficult to manage large datasets |
+ | **Data Recovery**     | Built-in recovery mechanisms to restore data in case of failure    | Often not possible without backups |
+ | **Transaction**       | Supports transactions ensuring atomicity (all or nothing)          | No built-in transaction support    |
 
 4. What is an SQL injection?
 
