@@ -1,4 +1,4 @@
-# Laboratory №5:
+# Laboratory №5: Database
 
 ## 🚀 Installation and Project Launch Instructions
  
