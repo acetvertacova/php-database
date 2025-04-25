@@ -7,8 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Tasks</title>
 </head>
+
 <?php
+
 require_once '../src/handlers/task/show.php';
+
 ?>
 
 <body class="bg-sky-100 py-8">

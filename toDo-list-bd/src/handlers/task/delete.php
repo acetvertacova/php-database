@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * This script deletes a task from the database based on the ID provided via GET.
+ * It redirects to the homepage after successful deletion or shows an error message if something goes wrong.
+ */
 require_once __DIR__ . '/../../helpers.php';
 
 $pdo = getPDO();

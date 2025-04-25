@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * This script handles both displaying and updating an existing task.
+ * It retrieves the task data based on ID passed via GET,
+ * and processes updates if the form is submitted via POST.
+ */
 require_once __DIR__ . '/../../helpers.php';
 $errors = [];
 

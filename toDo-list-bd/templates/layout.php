@@ -22,7 +22,7 @@
     </main>
 
     <footer class="border-t border-gray-200 p-4 text-center text-gray-600">
-        (c) <?php echo date('Y'); ?> Task Manager.
+        (c) <?php echo date('Y'); ?>
     </footer>
 </body>
 

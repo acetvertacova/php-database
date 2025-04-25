@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Loads a template and displays it within the layout.
+ *
+ * @param string $template Template filename (without path).
+ * @return void
+ */
 function template(string $template)
 {
     global $templatesDir, $layout;
@@ -9,6 +16,11 @@ function template(string $template)
     require_once $layout;
 }
 
+/**
+ * Creates and returns a PDO connection to the PostgreSQL database.
+ *
+ * @return PDO PDO database connection.
+ */
 function getPDO(): PDO
 {
     $dsn = "pgsql:host=localhost;dbname=postgres";
@@ -24,6 +36,13 @@ function getPDO(): PDO
     }
 }
 
+/**
+ * Checks if a category exists; if not, creates it and returns its ID.
+ *
+ * @param PDO $pdo Database connection.
+ * @param string $category Category name.
+ * @return int ID of the category.
+ */
 function categoryExists(PDO $pdo, string $category): int
 {
     $stmt = $pdo->prepare("SELECT id FROM category WHERE name = :category");
@@ -38,6 +57,13 @@ function categoryExists(PDO $pdo, string $category): int
 
     return $categoryId;
 }
+
+/**
+ * Retrieves all tasks with their associated categories.
+ *
+ * @param PDO $pdo Database connection.
+ * @return array Array of tasks.
+ */
 function getAll(PDO $pdo): array
 {
     $sql = "SELECT title, description, priority, steps, c.name as category
@@ -50,6 +76,17 @@ function getAll(PDO $pdo): array
     return $tasks;
 }
 
+/**
+ * Creates a new task in the database.
+ *
+ * @param PDO $pdo Database connection.
+ * @param string $title Task title.
+ * @param string $priority Task priority.
+ * @param string $description Task description.
+ * @param string $category Task category.
+ * @param string $steps Task steps.
+ * @return void
+ */
 function create(PDO $pdo, string $title, string $priority, string $description, string $category, string $steps)
 {
     $categoryId = categoryExists($pdo, $category);
@@ -65,6 +102,18 @@ function create(PDO $pdo, string $title, string $priority, string $description, 
     ]);
 }
 
+/**
+ * Updates an existing task in the database.
+ *
+ * @param PDO $pdo Database connection.
+ * @param string $title Task title.
+ * @param string $priority Task priority.
+ * @param string $description Task description.
+ * @param string $category Task category.
+ * @param string $steps Task steps.
+ * @param int $id Task ID.
+ * @return void
+ */
 function update(PDO $pdo, string $title, string $priority, string $description, string $category, string $steps, int $id)
 {
     $categoryId = categoryExists($pdo, $category);
@@ -80,12 +129,26 @@ function update(PDO $pdo, string $title, string $priority, string $description, 
     ]);
 }
 
+/**
+ * Deletes a task from the database by ID.
+ *
+ * @param PDO $pdo Database connection.
+ * @param int $id Task ID.
+ * @return void
+ */
 function delete(PDO $pdo, int $id)
 {
     $stmt = $pdo->prepare("DELETE FROM task WHERE id = :id");
     $stmt->execute([':id' => $id]);
 }
 
+/**
+ * Validates that required fields are present and not empty.
+ *
+ * @param array $postArray Form data ($_POST).
+ * @param array $errors Reference to the array where errors are stored.
+ * @return void
+ */
 function fieldRequired(array $postArray, array &$errors)
 {
     $requiredFields = ['title', 'priority', 'description', 'category', 'steps'];
@@ -99,6 +162,13 @@ function fieldRequired(array $postArray, array &$errors)
     }
 }
 
+/**
+ * Validates the length of specific fields.
+ *
+ * @param array $postArray Form data ($_POST).
+ * @param array $errors Reference to the array where errors are stored.
+ * @return void
+ */
 function fieldLength(array $postArray, array &$errors)
 {
     $fields = ['title', 'description', 'steps'];
@@ -112,6 +182,13 @@ function fieldLength(array $postArray, array &$errors)
     }
 }
 
+/**
+ * Prints validation errors for a specific form field.
+ *
+ * @param array $errors Array of errors.
+ * @param string $field Form field name.
+ * @return void
+ */
 function printErrors(array $errors, string $field)
 {
 
